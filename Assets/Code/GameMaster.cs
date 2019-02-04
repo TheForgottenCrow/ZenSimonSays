@@ -2,19 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum GameState
+{
+    ShowAnser = 0,
+    inputAnser
+
+}
+
 public class GameMaster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private GameState m_GameState;
 
-    }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        switch (m_GameState)
+        {
+            case GameState.ShowAnser:
+                ShowAnswer();
+                break;
+
+            case GameState.inputAnser:
+                InputAnswer();
+                break;
+        }
+    }
+
+    private void InputAnswer()
+    {
 
     }
+
+    private void ShowAnswer()
+    {
+
+    }
+
 
     public void Log(string msg)
     {
